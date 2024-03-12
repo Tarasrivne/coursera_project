@@ -55,7 +55,7 @@ ROOT_URLCONF = "littlemon.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ['restaurant/templates/partials'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
