@@ -3,6 +3,15 @@ from django.shortcuts import render
 # from .forms import BookingForm
 from .models import Menu
 
+# Add display_menu_items
+def display_menu_items(request, pk=None):
+    if pk:
+        menu_item = Menu.objects.get(pk=pk)
+    else:
+        menu_item = ''
+    return render(request, 'menu_item.html', {"menu_item": menu_item})
+
+
 # Add item menu
 def menu(request):
     menu_data = Menu.objects.all()
