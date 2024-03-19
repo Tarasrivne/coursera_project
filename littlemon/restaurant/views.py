@@ -1,6 +1,6 @@
 # from django.http import HttpResponse
 from django.shortcuts import render
-# from .forms import BookingForm
+from .forms import BookingForm
 from .models import Menu
 
 
@@ -16,8 +16,8 @@ def display_menu_items(request, pk=None):
 # Add item menu
 def menu(request):
     menu_data = Menu.objects.all()
-    main_data = {"menu": "menu_data"}
-    return render(request, 'menu.html', main_data)
+    main_data = {"menu": menu_data}
+    return render(request, 'menu.html', {"menu" :main_data})
 
 # Create your views here.
 def home(request):
