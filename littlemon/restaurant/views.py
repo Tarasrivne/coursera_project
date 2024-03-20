@@ -1,4 +1,4 @@
-# from django.http import HttpResponse
+from django.http import HttpResponse
 from django.shortcuts import render
 from .forms import BookingForm
 from .models import Menu
@@ -9,7 +9,7 @@ def display_menu_items(request, pk=None):
     if pk:
         menu_item = Menu.objects.get(pk=pk)
     else:
-        menu_item = ''
+        menu_item = ""
     return render(request, 'menu_item.html', {"menu_item": menu_item})
 
 
@@ -32,5 +32,5 @@ def book(request):
         form = BookingForm(request.POST)
         if form.is_valid():
             form.save()
-    context = {'form':form}
+    context = {'form': form}
     return render(request, 'book.html', context)
